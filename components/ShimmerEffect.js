@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 
 //Import da lib
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';

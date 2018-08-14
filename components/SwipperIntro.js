@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, Alert } from 'react-native';
+
+import AppIntro from 'react-native-app-intro';
 
 export default class SwipperIntro extends Component {
     render() {
