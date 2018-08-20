@@ -9,11 +9,43 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+
+import { createStackNavigator } from 'react-navigation';
 
 import ShimmerEffect from './components/ShimmerEffect';
 import SwipperIntro from './components/SwipperIntro';
+
+class HomeScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title="ShimmerEffect"
+          onPress={() => this.props.navigation.navigate('ShimmerEffect')}
+        />
+        <Button
+          title="SwipperIntro"
+          onPress={() => this.props.navigation.navigate('SwipperIntro')}
+        />
+      </View>
+    );
+  }
+}
+
+const RootStack = createStackNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+  SwipperIntro: {
+    screen: SwipperIntro
+  },
+  ShimmerEffect: {
+    screen: ShimmerEffect
+  },
+});
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -26,10 +58,11 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-     <SwipperIntro/>
+      <RootStack/>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
