@@ -1,41 +1,62 @@
 import React, { Component } from 'react';
-import { StyleSheet, Alert } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import AppIntro from 'react-native-app-intro';
 
 export default class SwipperIntro extends Component {
+    onSkipBtnHandle = (index) => {
+        Alert.alert('Skip');
+        console.log(index);
+    }
+    doneBtnHandle = () => {
+        Alert.alert('Done');
+    }
+    nextBtnHandle = (index) => {
+        Alert.alert('Next');
+        console.log(index);
+    }
+    onSlideChangeHandle = (index, total) => {
+        console.log(index, total);
+    }
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!
-            </Text>
-                <Text style={styles.instructions}>
-                    To get started, edit App.js
-            </Text>
-                <Text style={styles.instructions}>
-                    {instructions}
-                </Text>
-            </View>
+            <AppIntro customStyles={{ btnContainer: { flex: 1 } }}>
+                <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
+                    <View level={10}><Text style={styles.text}>Page 1</Text></View>
+                    <View level={15}><Text style={styles.text}>Page 1</Text></View>
+                    <View level={8}><Text style={styles.text}>Page 1</Text></View>
+                </View>
+                <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
+                    <View level={-10}><Text style={styles.text}>Page 2</Text></View>
+                    <View level={5}><Text style={styles.text}>Page 2</Text></View>
+                    <View level={20}><Text style={styles.text}>Page 2</Text></View>
+                </View>
+                <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
+                    <View level={8}><Text style={styles.text}>Page 3</Text></View>
+                    <View level={0}><Text style={styles.text}>Page 3</Text></View>
+                    <View level={-10}><Text style={styles.text}>Page 3</Text></View>
+                </View>
+                <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
+                    <View level={5}><Text style={styles.text}>Page 4</Text></View>
+                    <View level={10}><Text style={styles.text}>Page 4</Text></View>
+                    <View level={15}><Text style={styles.text}>Page 4</Text></View>
+                </View>
+            </AppIntro>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
+    slide: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#9DD6EB',
+        padding: 15,
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
+    text: {
+        color: '#fff',
+        fontSize: 30,
+        fontWeight: 'bold',
     },
 });

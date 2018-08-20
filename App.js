@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import ShimmerEffect from './components/ShimmerEffect';
+import SwipperIntro from './components/SwipperIntro';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -25,7 +26,7 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-     <ShimmerEffect/>
+     <SwipperIntro/>
     );
   }
 }

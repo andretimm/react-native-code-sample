@@ -18,6 +18,47 @@ export default createStackNavigator({
   },
 });
 ```
+* #### [App Intro](https://github.com/FuYaoDe/react-native-app-intro)
+Slide intro do aplicaitvo.
+``` shell
+$ npm i react-native-app-intro --save
+$ npm i https://github.com/merryjs/react-native-app-intro --save
+```
+
+```js
+//Import da lib
+import AppIntro from 'react-native-app-intro';
+.
+.
+.
+    render() {
+        return (
+            <AppIntro customStyles={{ btnContainer: { flex: 1 } }}>
+                <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
+                    <View level={10}><Text style={styles.text}>Page 1</Text></View>
+                    <View level={15}><Text style={styles.text}>Page 1</Text></View>
+                    <View level={8}><Text style={styles.text}>Page 1</Text></View>
+                </View>
+                <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
+                    <View level={-10}><Text style={styles.text}>Page 2</Text></View>
+                    <View level={5}><Text style={styles.text}>Page 2</Text></View>
+                    <View level={20}><Text style={styles.text}>Page 2</Text></View>
+                </View>
+                <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
+                    <View level={8}><Text style={styles.text}>Page 3</Text></View>
+                    <View level={0}><Text style={styles.text}>Page 3</Text></View>
+                    <View level={-10}><Text style={styles.text}>Page 3</Text></View>
+                </View>
+                <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
+                    <View level={5}><Text style={styles.text}>Page 4</Text></View>
+                    <View level={10}><Text style={styles.text}>Page 4</Text></View>
+                    <View level={15}><Text style={styles.text}>Page 4</Text></View>
+                </View>
+            </AppIntro>
+        );
+    }
+```
+
 * #### [Shimmer Effect](https://blog.rocketseat.com.br/react-native-shimmer/)
 Utilizado para efeito de load parecido com o do Facebook.
 
