@@ -11,7 +11,10 @@
     "react-native": "0.55.4",
     "react-native-app-intro": "git+https://github.com/merryjs/react-native-app-intro.git",
     "react-native-linear-gradient": "^2.4.0",
+    "react-native-material-bottom-navigation": "^1.0.0",
     "react-native-shimmer-placeholder": "^1.0.29",
+    "react-native-snap-carousel": "^3.7.2",
+    "react-native-vector-icons": "^5.0.0",
     "react-navigation": "^2.11.2"
   },
   "devDependencies": {

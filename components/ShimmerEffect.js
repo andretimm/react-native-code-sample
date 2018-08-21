@@ -12,6 +12,9 @@ import { ScrollView, View, Text, StyleSheet, Image, Dimensions } from 'react-nat
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 export default class ShimmerEffect extends Component {
+    static navigationOptions = {
+        header: null,
+    };
     state = {
         visible: false,
         userImageVisible: false,

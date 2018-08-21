@@ -4,6 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import AppIntro from 'react-native-app-intro';
 
 export default class SwipperIntro extends Component {
+    static navigationOptions = {
+        header: null,
+    };
     onSkipBtnHandle = (index) => {
         Alert.alert('Skip');
         console.log(index);
