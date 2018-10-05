@@ -16,6 +16,7 @@ import ShimmerEffect from './components/ShimmerEffect';
 import SwipperIntro from './components/SwipperIntro';
 import Tab from './components/Tab';
 import CarouselScreen from './components/Carousel';
+import VectorIcons from './components/VectorIcons';
 
 class HomeScreen extends Component {
   render() {
@@ -37,6 +38,10 @@ class HomeScreen extends Component {
           title="Carousel"
           onPress={() => this.props.navigation.navigate('Carousel')}
         />
+        <Button
+          title="VectorIcons"
+          onPress={() => this.props.navigation.navigate('VectorIcons')}
+        />
       </View>
     );
   }
@@ -57,6 +62,9 @@ const RootStack = createStackNavigator({
   },
   Carousel: {
     screen: CarouselScreen
+  },
+  VectorIcons: {
+    screen: VectorIcons
   }
 });
 
