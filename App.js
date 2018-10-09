@@ -1,78 +1,49 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ *
+ * @format
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  View,
-  Button
-} from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 
-import { createStackNavigator } from 'react-navigation';
-
-import ShimmerEffect from './components/ShimmerEffect';
-import SwipperIntro from './components/SwipperIntro';
-import Tab from './components/Tab';
-import CarouselScreen from './components/Carousel';
-import VectorIcons from './components/VectorIcons';
-
-class HomeScreen extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Button
-          title="ShimmerEffect"
-          onPress={() => this.props.navigation.navigate('ShimmerEffect')}
-        />
-        <Button
-          title="SwipperIntro"
-          onPress={() => this.props.navigation.navigate('SwipperIntro')}
-        />
-        <Button
-          title="Tab"
-          onPress={() => this.props.navigation.navigate('Tab')}
-        />
-        <Button
-          title="Carousel"
-          onPress={() => this.props.navigation.navigate('Carousel')}
-        />
-        <Button
-          title="VectorIcons"
-          onPress={() => this.props.navigation.navigate('VectorIcons')}
-        />
-      </View>
-    );
-  }
-}
-
-const RootStack = createStackNavigator({
-  Home: {
-    screen: HomeScreen
-  },
-  SwipperIntro: {
-    screen: SwipperIntro
-  },
-  ShimmerEffect: {
-    screen: ShimmerEffect
-  },
-  Tab: {
-    screen: Tab
-  },
-  Carousel: {
-    screen: CarouselScreen
-  },
-  VectorIcons: {
-    screen: VectorIcons
-  }
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
+  android:
+    'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu',
 });
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <RootStack />
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Text style={styles.instructions}>{instructions}</Text>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});

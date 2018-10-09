@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.utilitarios",
+    package = "com.samples",
 )
 
 android_resource(
     name = "res",
-    package = "com.utilitarios",
+    package = "com.samples",
     res = "src/main/res",
 )
 
