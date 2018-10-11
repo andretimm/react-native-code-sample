@@ -34,7 +34,7 @@ export default class HomePage extends Component {
         <ScrollView>
           <View style={styles.grid}>
             {PHOTOS.map(uri => (
-              <View key={uri} style={styles.containerImg}>
+              <View key={uri} style={styles.containerImg} >
                 <ImageBackground source={{ uri }} style={styles.image} >
                   <Text style={styles.paragraph}> TITLE </Text>
                 </ImageBackground>
@@ -45,7 +45,7 @@ export default class HomePage extends Component {
         <SafeAreaView>
           <View>
             <FAB
-              icon="filter-list"             
+              icon="filter-list"
               style={styles.fab}
               onPress={() =>
                 this.setState(state => ({ visible: !state.visible }))

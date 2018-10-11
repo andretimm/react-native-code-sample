@@ -2,6 +2,7 @@ import { createStackNavigator } from 'react-navigation';
 import { Animated, Easing } from 'react-native';
 import Colors from './component/shared/Colors';
 import HomePage from './component/pages/HomePage';
+import TesteCameraRoll from './component/pages/TesteCameraRoll';
 
 const transitionConfig = () => {
     return {
@@ -49,6 +50,17 @@ const Root = createStackNavigator({
         screen: HomePage,
         navigationOptions: ({ navigation }) => ({
             title: 'Home',
+            headerTintColor: '#fff',
+            headerStyle: {
+                backgroundColor: Colors.primary,
+                borderBottomWidth: 0,
+            },
+        }),
+    },
+    TesteCameraRoll: {
+        screen: TesteCameraRoll,
+        navigationOptions: ({ navigation }) => ({
+            title: 'TesteCameraRoll',
             headerTintColor: '#fff',
             headerStyle: {
                 backgroundColor: Colors.primary,
